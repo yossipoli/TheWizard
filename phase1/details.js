@@ -38,11 +38,11 @@ submit.addEventListener("click", function () {
     if (!underAgeValidate(birthDate)) {
         birthDateX.style.display = "block";
     }
+    if (check = true){
+        window.location.href = "/../phase2/phase2.html";
+    }
 })
 
-if (check = true){
-    window.location.href = "/../phase2/personal.html";
-}
 
 function underAgeValidate(birthday) {
     var optimizedBirthday = birthday.replace(/-/g, "/");
