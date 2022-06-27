@@ -58,7 +58,7 @@ async function getCities(){
             pageCounter++
             localStorage.setItem("wizardUser", JSON.stringify(user))
             localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-            window.location.replace("/../phase3/personal.html")
+            window.location.href = "/../phase3/personal.html"
             // window.location.replace("/../approve/approve.html");
 
         }
