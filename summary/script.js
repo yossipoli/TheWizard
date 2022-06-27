@@ -31,4 +31,5 @@ function updateData() {
 updateData();
 button.addEventListener("click", function () {
   localStorage.clear();
+  window.location.replace("/../approve/approve.html");
 });
