@@ -1,64 +1,62 @@
-// const cities= require('./cities.json'); 
-// console.log(cities);
 
+async function getCities(){
+    const user = JSON.parse(localStorage.getItem("wizardUser"))
+    const cities = await fetch("/../cities.json").then(res=>res.json())
+    
+    const citySection = document.querySelector("#city")
+    const submit = document.querySelector("#submit")
 
-const cities=[
-    "Where are you living?",
-    "new York",
-    "Los Angeles",
-    "Chicago",
-    "Houston",
-    "Phoenix",
-    "Philadelphia",
-    "San Antonio",
-    "San Diego",
-    "Dallas",
-    "San Jose",
-    "Austin",
-    "Jacksonville",
-    "Fort Worth",
-    "Columbus",
-    "Indianapolis",
-    "Charlotte",
-    "San Francisco",
-    "Seattle",
-    "Denver",
-    "Washington",
-    "Nashville-Davidson",
-    "Oklahoma City",
-    "El Paso",
-    "Boston",
-    "Portland",
-    "Las Vegas",
-    "Detroit",
-    "Memphis",
-    "Louisville",
-    "Baltimore",
-]
-
-const citySection = document.querySelector("#city")
-const submit = document.querySelector("#submit")
-
-for (const city of cities){
-    const cityName = document.createElement("option")
-    citySection.appendChild(cityName)
-    cityName.innerText = city
-    cityName.value = city
-}
-
-submit.addEventListener("click",(e)=>{
-    e.preventDefault()
-    const city = document.querySelector("#city").value
-    const street = document.querySelector("#street").value
-    const number = document.querySelector("#number").value
-
-    validation(city, street, number)
-})
-
-function validation(city, street, number){
-    if (city === "Where are you living?"){
-        alert("Please choose a city")
+    for (const city of cities){
+        const cityName = document.createElement("option")
+        citySection.appendChild(cityName)
+        cityName.innerText = city
+        cityName.value = city
     }
 
-    const regex = /\w+([\s\w+.-])/
+    submit.addEventListener("click",(e)=>{
+        e.preventDefault()
+        const city = document.querySelector("#city").value
+        const street = document.querySelector("#street").value
+        const number = document.querySelector("#number").value
+
+        validation(city, street, +number)
+    })
+
+    function validation(city, street, number){
+
+        const invalidCity = document.querySelector("#invalid_city")
+        const invalidStreet = document.querySelector("#invalid_street")
+        const invalidNumber = document.querySelector("#invalid_number")
+
+        let isValid = true
+        if (city === "Where are you living?"){
+            invalidCity.classList.remove("hidden")
+            isValid = false
+        } else {
+            invalidCity.classList.add("hidden")
+        }
+
+        const regex = /^[ A-Za-z0-9.-]*$/
+        if (!street.match(regex) || street===""){
+            invalidStreet.classList.remove("hidden")
+            isValid = false
+        }else {
+            invalidStreet.classList.add("hidden")
+        }
+
+        if (!Number.isInteger(number) || number<=0){
+            invalidNumber.classList.remove("hidden")
+            isValid = false
+        } else {
+            invalidNumber.classList.add("hidden")
+        }
+
+        if (isValid){
+            user.city = city
+            user.street = street
+            user.number = number
+            localStorage.setItem("wizardUser", JSON.stringify(user))
+        }
+    }
 }
+getCities()
