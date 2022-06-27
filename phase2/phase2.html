@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheWizard</title>
+    <link rel="stylesheet" href="/../style.css">
+</head>
+<body>
+    <h1>The Wizard</h1>
+    <section class="progress">
+        <div>Agreement form</div>
+        <div>Phase 1: personal details</div>
+        <div>Phase 2: Address</div>
+        <div>Phase 3: Hobbies</div>
+        <div>Summery</div>
+    </section>
+    <h2>Pase 2: Address</h2>
+    <form>
+
+        <label for="city">City</label>
+        <select name="city" id="city" required>
+            
+        </select>
+        <span id="invalid_city" class="invalid hidden">Please choose a city</span>
+
+        <label for="street">Street</label>
+        <input id="street" type="text">
+        <span id="invalid_street" class="invalid hidden">Street should include only alphanumeric and - or .</span>
+
+        <label for="number">Number</label>
+        <input id="number" type="number" min="0" step="1" required>
+        <span id="invalid_number" class="invalid hidden">The number has to be a positive Integer</span>
+
+        <input id="submit" class="submitBtn" type="submit">
+    </form>
+    <script src="app.js"></script>
+    <script src="../progressbar.js"></script>
+</body>
+</html>
