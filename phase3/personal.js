@@ -1,5 +1,10 @@
-const hobbies=fetch('./hobbies.json'); 
 
+async function getHobbies() {
+    const response = await fetch('https://github.com/yossipoli/TheWizard/blob/main/hobbies.json', { mode: 'no-cors'});
+    const hobbies = await response.json();
+    console.log(hobbies);
+}
+getHobbies()
 
 
 
@@ -16,4 +21,4 @@ function createHobbies(hobbies){
         hobbiesPlace.append(hobbieElement, hobbieLabel)
     }
 }
-createHobbies(hobbies)
+//createHobbies(hobbies)
