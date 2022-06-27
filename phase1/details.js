@@ -3,6 +3,8 @@ const firstNameX = document.getElementById("firstNameAsterisk")
 const emailX = document.getElementById("emailAsterisk")
 const birthDateX = document.getElementById("birthDateAsterisk")
 
+let pageCounter = parseInt(localStorage.getItem("pageCounter"))
+const user = JSON.parse(localStorage.getItem("wizardUser"))
 
 document.querySelector("form").addEventListener('submit', function (e) {
     e.preventDefault()
@@ -39,6 +41,12 @@ submit.addEventListener("click", function () {
         birthDateX.style.display = "block";
     }
     if (check = true){
+        pageCounter++
+        user.name = firstName
+        user.email = email
+        user.birthDate = birthDate
+        localStorage.setItem("wizardUser", JSON.stringify(user))
+        localStorage.setItem("pageCounter", pageCounter)
         window.location.href = "/../phase2/phase2.html";
     }
 })

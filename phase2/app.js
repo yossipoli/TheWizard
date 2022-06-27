@@ -58,13 +58,12 @@ async function getCities(){
             pageCounter++
             localStorage.setItem("wizardUser", JSON.stringify(user))
             localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-            window.location.href = "/../phase3/personal.html"
-            // window.location.replace("/../approve/approve.html");
+            window.location.href = "/../phase3/personal.html";
 
         }
     }
 }
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+let pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
 // const progress = document.querySelectorAll(".progress")
 // for (let i=0; i< pageCounter;i++){
