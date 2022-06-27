@@ -55,8 +55,26 @@ async function getCities(){
             user.city = city
             user.street = street
             user.number = number
+            pageCounter++
             localStorage.setItem("wizardUser", JSON.stringify(user))
+            localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+            window.location.replace("/../phase3/personal.html")
+            // window.location.replace("/../approve/approve.html");
+
         }
     }
 }
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+
+// const progress = document.querySelectorAll(".progress")
+// for (let i=0; i< pageCounter;i++){
+//     progress[i].classList.add("progress_background")
+// }
+
+// if (pageCounter<2){
+//    // window.location.href = "approve\\approve.html";
+//     window.location.href = "/../approve/approve.html";
+// }else{
+//     getCities()
+// }
 getCities()
