@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheWizard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/../style.css">
 </head>
 <body>
     <h1>The Wizard</h1>
@@ -16,18 +16,21 @@
         <div>Summery</div>
     </section>
     <h2>Pase 2: Address</h2>
-    <form action="phase3.html"></form>
+    <form></form>
 
         <label for="city">City</label>
         <select name="city" id="city" required>
-
+            
         </select>
+        <span id="invalid_city" class="invalid hidden">Please choose a city</span>
 
         <label for="street">Street</label>
         <input id="street" type="text">
+        <span id="invalid_street" class="invalid hidden">Street should include only alphanumeric and - or .</span>
 
         <label for="number">Number</label>
-        <input type="number" min="0" step="1" required>
+        <input id="number" type="number" min="0" step="1" required>
+        <span id="invalid_number" class="invalid hidden">The number has to be a positive Integer</span>
 
         <input id="submit" type="submit">
     </form>
