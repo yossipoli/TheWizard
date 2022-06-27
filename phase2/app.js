@@ -55,7 +55,7 @@ async function getCities(){
             user.city = city
             user.street = street
             user.number = number
-            pageCounter++
+            pageCounter.phase2 = true
             localStorage.setItem("wizardUser", JSON.stringify(user))
             localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
             window.location.href = "/../phase3/personal.html";
@@ -63,17 +63,9 @@ async function getCities(){
         }
     }
 }
-let pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
-// const progress = document.querySelectorAll(".progress")
-// for (let i=0; i< pageCounter;i++){
-//     progress[i].classList.add("progress_background")
-// }
-
-// if (pageCounter<2){
-//    // window.location.href = "approve\\approve.html";
-//     window.location.href = "/../approve/approve.html";
-// }else{
-//     getCities()
-// }
+if (!pageCounter.phase2){
+    window.location.replace("/../phase1/details.html")
+}
 getCities()
