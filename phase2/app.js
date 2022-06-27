@@ -1,4 +1,3 @@
-
 async function getCities(){
     const user = JSON.parse(localStorage.getItem("wizardUser"))
     const cities = await fetch("/../cities.json").then(res=>res.json())
@@ -17,9 +16,17 @@ async function getCities(){
         e.preventDefault()
         const city = document.querySelector("#city").value
         const street = document.querySelector("#street").value
-        const number = document.querySelector("#number").value
+        const number = +document.querySelector("#number").value
 
-        validation(city, street, +number)
+        if (validation(city, street, number)){
+            user.city = city
+            user.street = street
+            user.number = number
+            pageCounter.phase2 = true
+            localStorage.setItem("wizardUser", JSON.stringify(user))
+            localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+            window.location.href = "/../phase3/personal.html";
+        }
     })
 
     function validation(city, street, number){
@@ -51,21 +58,12 @@ async function getCities(){
             invalidNumber.classList.add("hidden")
         }
 
-        if (isValid){
-            user.city = city
-            user.street = street
-            user.number = number
-            pageCounter.phase2 = true
-            localStorage.setItem("wizardUser", JSON.stringify(user))
-            localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-            window.location.href = "/../phase3/personal.html";
-
-        }
+        return isValid ?  true : false  
     }
 }
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
-if (!pageCounter.phase2){
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+if (!pageCounter.phase1){
     window.location.replace("/../phase1/details.html")
 }
 getCities()
