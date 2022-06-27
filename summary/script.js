@@ -2,7 +2,7 @@ const main = document.querySelector("main");
 const allP = document.querySelectorAll("p");
 const button = document.querySelector("button");
 
-const data = localStorage.getItem("user");
+const data = JSON.parse(localStorage.getItem("wizardUser"));
 // const data = {
 //   fullName: "mike",
 //   email: "sfs@gmail.com",
