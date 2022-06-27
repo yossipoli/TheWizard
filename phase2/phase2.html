@@ -19,21 +19,32 @@
     <h2>Pase 2: Address</h2>
     <form>
 
-        <label for="city">City</label>
-        <select name="city" id="city" required>
-            
+        <div>
+            <label for="city">City</label>
+            <select name="city" id="city" required>
+        </div>
+
+        <div>
         </select>
         <span id="invalid_city" class="invalid hidden">Please choose a city</span>
+        </div>
 
-        <label for="street">Street</label>
-        <input id="street" type="text">
-        <span id="invalid_street" class="invalid hidden">Street should include only alphanumeric and - or .</span>
+        <div>
+            <label for="street">Street</label>
+            <input id="street" type="text">
+            <span id="invalid_street" class="invalid hidden">Street should include only alphanumeric and - or .</span>
+        </div>
 
-        <label for="number">Number</label>
-        <input id="number" type="number" min="0" step="1" required>
-        <span id="invalid_number" class="invalid hidden">The number has to be a positive Integer</span>
+        <div>
 
-        <input id="submit" class="submitBtn" type="submit">
+            <label for="number">Number</label>
+            <input id="number" type="number" min="0" step="1" required>
+            <span id="invalid_number" class="invalid hidden">The number has to be a positive Integer</span>
+        </div>
+
+        <div>
+            <input id="submit" class="submitBtn" type="submit">
+        </div>
     </form>
     <script src="app.js"></script>
     <script src="../progressbar.js"></script>

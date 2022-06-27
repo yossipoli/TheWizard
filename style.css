@@ -27,7 +27,13 @@ h1{
     display: none;
 }
 
+form>div{
+    font-size: 1.3rem;
+    margin: 10px;
+}
+
 #submit{
     font-size: 2rem;
     color: green;
+    background-color:floralwhite;
 }
