@@ -40,6 +40,7 @@ const hobbies = ["cooking",
 "movies"]
 
 const data = JSON.parse(localStorage.getItem("wizardUser"));
+let page = JSON.parse(localStorage.getItem("pageCounter"));
 
 function createHobbies(hobbies){
     const hobbiesPlace = document.getElementById("hobbies")
@@ -49,6 +50,7 @@ function createHobbies(hobbies){
         const hobbieLabel = document.createElement("label")
         hobbieElement.type = "checkbox"
         hobbieElement.value = hobbie
+        hobbieElement.classList.add("hobbie")
         hobbieLabel.textContent = hobbie
         console.log(hobbieElement)
         hobbiesPlace.append(hobbieElement, hobbieLabel)
@@ -64,6 +66,12 @@ photoPlace.addEventListener('input',()=>{
     const photoPart = document.getElementById("photo")
     photoPart.append(photo)
 
+})
+
+function next(){
+    page.pageCounter ++
+    window.location.href = "/../summary/summery.html";
 }
-)
+
+
 //createHobbies(hobbies)
