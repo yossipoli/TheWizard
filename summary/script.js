@@ -1,11 +1,11 @@
-const main = document.querySelector("main");
-const allP = document.querySelectorAll("p");
-const button = document.querySelector("button");
-
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"));
 if (!pageCounter.phase3) {
   window.location.replace("/../phase3/personal.html");
 }
+
+const main = document.querySelector("main");
+const allP = document.querySelectorAll("p");
+const button = document.querySelector("button");
 
 const data = JSON.parse(localStorage.getItem("wizardUser"));
 // const data = {

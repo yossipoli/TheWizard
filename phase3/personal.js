@@ -1,3 +1,8 @@
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+
+if (!pageCounter.phase2){
+    window.location.replace("/../phase2/phase2.html")
+}
 
 async function getHobbies() {
     const hobbies = await fetch("hobbies.json").then(res=>res.json())
@@ -5,7 +10,6 @@ async function getHobbies() {
 }
 getHobbies()
 
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const data = JSON.parse(localStorage.getItem("wizardUser"));
 const photoPart = document.getElementById("photo")
 data.img = data.img || ""

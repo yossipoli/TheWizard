@@ -6,6 +6,10 @@ const birthDateX = document.getElementById("birthDateAsterisk")
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const user = JSON.parse(localStorage.getItem("wizardUser"))
 
+if (!pageCounter.approve){
+    window.location.replace("/../approve/approve.html")
+}
+
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
     e.preventDefault()
