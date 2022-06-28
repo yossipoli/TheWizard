@@ -27,9 +27,13 @@ submit.addEventListener("click", function () {
 
     let check = true;
 
-    if (firstName.length < 2 && !nameFormat) {
+    if (firstName.length < 2) {
         firstNameX.style.display = "block";
         check = false;
+    }
+
+    else if (firstName.length > 2){
+        firstNameX.style.display = "none";
     }
 
     if (!email.match(mailFormat)) {
@@ -37,9 +41,19 @@ submit.addEventListener("click", function () {
         check = false;
     }
 
+    else if (email.match(mailFormat)){
+        emailX.style.display = "none";
+    }
+
     if (!underAgeValidate(birthDate)) {
         birthDateX.style.display = "block";
+        check = false;
     }
+
+    else if (underAgeValidate(birthDate)){
+        birthDateX.style.display = "none";
+    }
+
     if (check){
         pageCounter.phase1 = true
         user.name = firstName
