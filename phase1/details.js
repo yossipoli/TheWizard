@@ -40,7 +40,7 @@ submit.addEventListener("click", function () {
     if (!underAgeValidate(birthDate)) {
         birthDateX.style.display = "block";
     }
-    if (check = true){
+    if (check){
         pageCounter.phase1 = true
         user.name = firstName
         user.email = email
