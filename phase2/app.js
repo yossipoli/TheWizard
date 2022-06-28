@@ -21,7 +21,7 @@ async function getCities(){
         cityName.value = city
     }
     
-    let city = document.querySelector("#city").value = user.city || ""
+    let city = document.querySelector("#city").value = user.city || "Where are you living?"
 
     submit.addEventListener("click",(e)=>{
         e.preventDefault()
