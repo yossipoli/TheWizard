@@ -23,16 +23,19 @@
     <div>
         <form>
             <div>
-                <label>Full Name <span id="firstNameAsterisk">*</span></label>
+                <label>Full Name</label>
                 <input id="firstName" type="text" placeholder="First Name...">
+                <span class="invalid hidden" id="firstNameAsterisk">Please insert full name (Name must required minimum of 2 words)</span>
             </div>
             <div>
-                <label>Email <span id="emailAsterisk">*</span></label>
+                <label>Email</label>
                 <input id="email" type="text" placeholder="Email...">
+                <span class="invalid hidden" id="emailAsterisk">Not valid email, please try again</span>
             </div>
             <div>
-                <label>Birth Date <span id="birthDateAsterisk">*</span></label>
+                <label>Birth Date</label>
                 <input id="birthDate" type="date">
+                <span class="invalid hidden" id="birthDateAsterisk">Minimum age must be 18</span>
             </div>
         </form>
     </div>
