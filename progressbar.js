@@ -1,6 +1,7 @@
-let pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+// const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
-const progress = document.querySelectorAll(".progress")
-for (let i=0; i< pageCounter;i++){
-    progress[i].classList.add("progress_background")
+for (const page in pageCounter){
+    if (pageCounter[page]){
+        document.querySelector(`#${page}`).classList.add("progress_background")
+    }
 }
