@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User personal details</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/../style.css">
 </head>
 <body>
     <header>
@@ -24,12 +24,14 @@
         <div id="photo">
             <label>Photo:</label>
             <input id="userPhoto" type="text">
+            <button onclick="addPhoto()">add</button>
         </div>
         <div id="hobbies">
             <label>hobbies:</label>
+            
         </div>
         <div>
-            <button type="submit" onclick="next">submit</button>
+            <button type="submit" onclick="next()">submit</button>
         </div>
 
     </main>
@@ -40,4 +42,5 @@
 </body>
 <script src="personal.js"></script>
 <script src="../progressbar.js"></script>
+
 </html>
