@@ -5,7 +5,7 @@ async function getCities(){
     const prev = document.querySelector("#prevBtn")
     prev.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.href = "/../phase1/details.html";
+        window.location.href = "/../phase1/index.html";
     })    
 
     let street = document.querySelector("#street").value = user.street || ""
@@ -36,7 +36,7 @@ async function getCities(){
             pageCounter.phase2 = true
             localStorage.setItem("wizardUser", JSON.stringify(user))
             localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-            window.location.href = "/../phase3/personal.html";
+            window.location.href = "/../phase3/index.html";
         }
     })
 
@@ -75,6 +75,6 @@ async function getCities(){
 
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 if (!pageCounter.phase1){
-    window.location.replace("/../phase1/details.html")
+    window.location.replace("/../phase1/index.html")
 }
 getCities()
