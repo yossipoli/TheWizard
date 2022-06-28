@@ -5,10 +5,10 @@ async function getHobbies() {
 }
 getHobbies()
 
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const data = JSON.parse(localStorage.getItem("wizardUser"));
 data.img = data.img || ""
 data.hobbies = data.hobbies || []
-console.log(data)
 
 function createHobbies(hobbies){
     const hobbiesPlace = document.getElementById("hobbies")
@@ -30,13 +30,11 @@ function addHobbies(hobbie){
 
 
 function addPhoto(){
-    const data = JSON.parse(localStorage.getItem("wizardUser"));
     const photoPlace = document.getElementById("userPhoto")
     data.img = photoPlace.value
     const photoPart = document.getElementById("photo")
     photoPart.src = photoPlace.value
-    console.log(data.img)
-    localStorage.setItem("wizardUser", JSON.stringify(data))
+
 
 }
 
@@ -49,12 +47,9 @@ prev.addEventListener("click", (e)=>{
 function next(){
     const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
     pageCounter.phase3 = true
-    console.log(pageCounter)
     localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
     localStorage.setItem("wizardUser", JSON.stringify(data))
-    console.log(pageCounter)
     window.location.href = "/../summary/summary.html";
 }
 
 
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
