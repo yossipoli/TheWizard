@@ -81,3 +81,12 @@ button {
   display: flex;
   justify-content: center;
 }
+
+#p3 {
+  border: 1px dashed black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 450px;
+}
