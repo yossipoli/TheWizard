@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color: lightblue;
+  color: white;
+  background-image: url("https://codemyui.com/wp-content/uploads/2019/06/Shooting-Star-Background-in-Pure-CSS-1.gif");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +29,7 @@ img {
 
 .progress {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid rgb(86, 116, 215);
   font-size: 1.2rem;
   font-weight: bolder;
   border-radius: 20px;
@@ -40,7 +42,7 @@ img {
 
 .progress >a{
   margin: 0 20px;
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 5px;
 }
@@ -52,18 +54,13 @@ img {
 }
 
 h1 {
-  color: rgb(6, 41, 157);
+  color: rgb(86, 116, 215);
 }
 
 #submit {
   font-size: 2rem;
   color: green;
   background-color: floralwhite;
-}
-
-.prevBtn {
-  color: red;
-  font-size: 1.3rem;
 }
 
 .invalid {
@@ -77,15 +74,7 @@ h1 {
 form > div {
   font-size: 1.3rem;
   margin: 10px;
-}
-
-#submit,
-button {
-  font-size: 20px;
-  color: rgb(0, 128, 85);
-  background-color: floralwhite;
-  border: 0.5px solid gray;
-  border-radius: 20px;
+  color: white;
 }
 
 #agree {
@@ -93,8 +82,12 @@ button {
   justify-content: center;
 }
 
+h2{
+  color: white;
+}
+
 #p3 {
-  border: 1px dashed black;
+  color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -106,10 +99,19 @@ button {
 
 
 #summary {
-  border: 1px dashed black;
+  color: white;
+  border: 3px dotted rgb(86, 116, 215);
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 450px;
   margin-bottom: 10px;
+}
+
+button, #submit {
+  font-size: 20px;
+  color: white;
+  border: 0.5px solid gray;
+  background-color: rgb(86, 116, 215);
+  border-radius: 20px;
 }
