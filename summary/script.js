@@ -22,8 +22,9 @@ const data = JSON.parse(localStorage.getItem("wizardUser"));
 function updateData() {
   let i = 1;
   for (const key in data) {
-    if (key === "img") {
+    if (key == "img") {
       const img = document.createElement("img");
+      console.log("this is data img",data.img)
       img.src = data[key];
       allP[i].appendChild(img);
     } else {
@@ -38,3 +39,5 @@ button.addEventListener("click", function () {
   localStorage.clear();
   window.location.replace("/../approve/approve.html");
 });
+
+
