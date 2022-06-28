@@ -1,44 +1,74 @@
-
-.progress{
+* {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    border: 1px dashed black;
+  }
+  
+  .progress {
     display: flex;
     border: 1px solid black;
     font-size: 1.2rem;
     font-weight: bolder;
-}
-
-.progress>div{
+    border-radius: 20px;
+  }
+  
+  .progress > div {
     margin: 10px;
     padding: 2px;
-}
-
-.progress_background{
+  }
+  
+  .progress_background {
     background-color: aquamarine;
-}
+    border-radius: 20px;
+  }
+  
+  h1 {
+    color: rgb(24, 160, 115);
+  }
+  
 
-h1{
+  #submit{
+      font-size: 2rem;
+      color: green;
+      background-color:floralwhite;
+  }
+  
+  .prevBtn{
+      color: red;
+      font-size: 1.3rem;
+  }
+
+  .invalid {
     color: red;
-}
-
-.invalid{
-    color: red;
-}
-
-.hidden{
+  }
+  
+  .hidden {
     display: none;
-}
-
-form>div{
+  }
+  
+  form > div {
     font-size: 1.3rem;
     margin: 10px;
-}
-
-#submit{
-    font-size: 2rem;
-    color: green;
-    background-color:floralwhite;
-}
-
-.prevBtn{
-    color: red;
-    font-size: 1.3rem;
-}
+  }
+  
+  #submit,
+  button {
+    font-size: 20px;
+    color: rgb(0, 128, 85);
+    background-color: floralwhite;
+    border: 0.5px solid gray;
+    border-radius: 20px;
+  }
+  
+  #agree {
+    display: flex;
+    justify-content: center;
+  }
