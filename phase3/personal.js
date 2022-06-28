@@ -7,8 +7,10 @@ getHobbies()
 
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const data = JSON.parse(localStorage.getItem("wizardUser"));
+const photoPart = document.getElementById("photo")
 data.img = data.img || ""
 data.hobbies = data.hobbies || []
+photoPart.src = data.img
 
 function createHobbies(hobbies){
     const hobbiesPlace = document.getElementById("hobbies")
@@ -18,8 +20,12 @@ function createHobbies(hobbies){
         hobbieElement.type = "checkbox"
         hobbieElement.onclick = ()=> addHobbies(hobbie)
         hobbieElement.value = hobbie
-        hobbieElement.classList.add("hobbie")
         hobbieLabel.textContent = hobbie
+        for(const userHobby of data.hobbies){
+            if(userHobby == hobbie){
+                hobbieElement.checked = true
+            }
+        }
         hobbiesPlace.append(hobbieElement, hobbieLabel)
     }
 }
@@ -32,7 +38,6 @@ function addHobbies(hobbie){
 function addPhoto(){
     const photoPlace = document.getElementById("userPhoto")
     data.img = photoPlace.value
-    const photoPart = document.getElementById("photo")
     photoPart.src = photoPlace.value
 
 
