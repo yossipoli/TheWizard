@@ -29,7 +29,7 @@ submit.addEventListener("click", function () {
     firstName = document.getElementById("firstName").value
     email = document.getElementById("email").value
     birthDate = document.getElementById("birthDate").value
-    const nameFormat = /^[a-zA-Z]{2,}(?: [a-zA-Z]+){0,2}$/;
+    const nameFormat = /\w\w+\s\w\w+/g;
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const today = new Date();
     //const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -37,12 +37,12 @@ submit.addEventListener("click", function () {
 
     let check = true;
 
-    if (firstName.length < 2) {
+    if (!firstName.match(nameFormat)) {
         firstNameX.style.display = "block";
         check = false;
     }
 
-    else if (firstName.length > 2){
+    else if (firstName.match(nameFormat)){
         firstNameX.style.display = "none";
     }
 
