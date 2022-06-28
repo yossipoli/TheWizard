@@ -4,8 +4,10 @@ async function getHobbies() {
     createHobbies(hobbies)
 }
 getHobbies()
+
 const data = JSON.parse(localStorage.getItem("wizardUser"));
 data.hobbies = []
+data.img =""
 console.log(data)
 
 function createHobbies(hobbies){
@@ -14,7 +16,7 @@ function createHobbies(hobbies){
         const hobbieElement = document.createElement("input")
         const hobbieLabel = document.createElement("label")
         hobbieElement.type = "checkbox"
-        hobbieElement.onclick = ()=>addHobbies(hobbie)
+        hobbieElement.onclick = ()=> addHobbies(hobbie)
         hobbieElement.value = hobbie
         hobbieElement.classList.add("hobbie")
         hobbieLabel.textContent = hobbie
@@ -22,8 +24,7 @@ function createHobbies(hobbies){
     }
 }
 function addHobbies(hobbie){
-    data.hobbies.append(hobbie)
-    console.log(data)
+    data["hobbies"].push(hobbie)
 }
 
 
@@ -32,17 +33,15 @@ function addPhoto(){
     const data = JSON.parse(localStorage.getItem("wizardUser"));
     const photoPlace = document.getElementById("userPhoto")
     data.img = photoPlace.value
-    const photo = document.createElement("img")
-    photo.src = photoPlace.value 
     const photoPart = document.getElementById("photo")
-    photoPart.append(photo)
-
+    photoPart.src = photoPlace.value
+    console.log(data)
 }
 
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
     e.preventDefault()
-    window.location.href = "/../phase1/details.html";
+    window.location.href = "/../phase2/phase2.html";
 })  
 
 function next(){
