@@ -60,6 +60,12 @@ photoPlace.addEventListener('input',()=>{
 
 })
 
+const prev = document.querySelector("#prevBtn")
+prev.addEventListener("click", (e)=>{
+    e.preventDefault()
+    window.location.href = "/../phase1/details.html";
+})  
+
 function next(){
     page.pageCounter ++
     window.location.href = "/../summary/summery.html";

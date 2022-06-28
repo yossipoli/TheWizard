@@ -6,6 +6,12 @@ const birthDateX = document.getElementById("birthDateAsterisk")
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const user = JSON.parse(localStorage.getItem("wizardUser"))
 
+const prev = document.querySelector("#prevBtn")
+prev.addEventListener("click", (e)=>{
+    e.preventDefault()
+    window.location.href = "/../phase1/details.html";
+})  
+
 document.querySelector("form").addEventListener('submit', function (e) {
     e.preventDefault()
 })
