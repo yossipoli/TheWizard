@@ -9,7 +9,7 @@ const user = JSON.parse(localStorage.getItem("wizardUser"))
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
     e.preventDefault()
-    window.location.href = "/../phase1/details.html";
+    window.location.href = "/../approve/approve.html";
 })  
 
 document.querySelector("form").addEventListener('submit', function (e) {
