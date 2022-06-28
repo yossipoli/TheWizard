@@ -39,6 +39,12 @@ function addPhoto(){
 
 }
 
+const prev = document.querySelector("#prevBtn")
+prev.addEventListener("click", (e)=>{
+    e.preventDefault()
+    window.location.href = "/../phase1/details.html";
+})  
+
 function next(){
     const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
     pageCounter.phase3 = true
