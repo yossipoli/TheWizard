@@ -54,3 +54,4 @@ function next(){
 }
 
 
+const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))

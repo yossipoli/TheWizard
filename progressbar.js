@@ -1,4 +1,4 @@
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+// const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
 for (const page in pageCounter){
     if (pageCounter[page]){
