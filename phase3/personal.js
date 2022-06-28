@@ -45,7 +45,7 @@ prev.addEventListener("click", (e)=>{
 })  
 
 function next(){
-    const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+    // pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
     pageCounter.phase3 = true
     localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
     localStorage.setItem("wizardUser", JSON.stringify(data))
