@@ -14,15 +14,19 @@ firstNameX.style.display = "none";
 emailX.style.display = "none";
 birthDateX.style.display = "none";
 
+let firstName = document.getElementById("firstName").value = user.name || ""
+let email = document.getElementById("email").value = user.email || ""
+let birthDate = document.getElementById("birthDate").value = user.birthDate || ""
+
 
 submit.addEventListener("click", function () {
-    const firstName = document.getElementById("firstName").value
-    const email = document.getElementById("email").value
-    const birthDate = document.getElementById("birthDate").value
+    firstName = document.getElementById("firstName").value
+    email = document.getElementById("email").value
+    birthDate = document.getElementById("birthDate").value
     const nameFormat = /^[a-zA-Z]{2,}(?: [a-zA-Z]+){0,2}$/;
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const today = new Date();
-    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    //const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
 
     let check = true;
@@ -67,10 +71,10 @@ submit.addEventListener("click", function () {
 
 
 function underAgeValidate(birthday) {
-    var optimizedBirthday = birthday.replace(/-/g, "/");
-    var myBirthday = new Date(optimizedBirthday);
-    var currentDate = new Date().toJSON().slice(0, 10) + ' 01:00:00';
-    var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
+    const optimizedBirthday = birthday.replace(/-/g, "/");
+    const myBirthday = new Date(optimizedBirthday);
+    const currentDate = new Date().toJSON().slice(0, 10) + ' 01:00:00';
+    const myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
 
     if (myAge < 18) {
         return false;
