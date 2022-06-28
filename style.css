@@ -90,3 +90,12 @@ button {
   gap: 20px;
   width: 450px;
 }
+
+#summary {
+  border: 1px dashed black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  margin-bottom: 10px;
+}
