@@ -37,3 +37,8 @@ form>div{
     color: green;
     background-color:floralwhite;
 }
+
+.prevBtn{
+    color: red;
+    font-size: 1.3rem;
+}

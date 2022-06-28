@@ -1,22 +1,33 @@
 async function getCities(){
     const user = JSON.parse(localStorage.getItem("wizardUser"))
     const cities = await fetch("/../cities.json").then(res=>res.json())
+
+    const prev = document.querySelector("#prevBtn")
+    prev.addEventListener("click", (e)=>{
+        e.preventDefault()
+        window.location.href = "/../phase1/details.html";
+    })    
+
+    let street = document.querySelector("#street").value = user.street || ""
+    let number = document.querySelector("#number").value = user.number || 0
     
     const citySection = document.querySelector("#city")
     const submit = document.querySelector("#submit")
-
+    
     for (const city of cities){
         const cityName = document.createElement("option")
         citySection.appendChild(cityName)
         cityName.innerText = city
         cityName.value = city
     }
+    
+    let city = document.querySelector("#city").value = user.city || ""
 
     submit.addEventListener("click",(e)=>{
         e.preventDefault()
-        const city = document.querySelector("#city").value
-        const street = document.querySelector("#street").value
-        const number = +document.querySelector("#number").value
+         city = document.querySelector("#city").value
+         street = document.querySelector("#street").value
+         number = +document.querySelector("#number").value
 
         if (validation(city, street, number)){
             user.city = city
