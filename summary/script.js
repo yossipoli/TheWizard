@@ -1,6 +1,6 @@
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"));
 if (!pageCounter.phase3) {
-  window.location.replace("/../phase3/personal.html");
+  window.location.replace("/../phase3/index.html");
 }
 
 const main = document.querySelector("main");
@@ -37,7 +37,7 @@ function updateData() {
 updateData();
 button.addEventListener("click", function () {
   localStorage.clear();
-  window.location.replace("/../approve/approve.html");
+  window.location.replace("/../approve/index.html");
 });
 
 

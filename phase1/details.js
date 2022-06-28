@@ -7,13 +7,13 @@ const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 const user = JSON.parse(localStorage.getItem("wizardUser"))
 
 if (!pageCounter.approve){
-    window.location.replace("/../approve/approve.html")
+    window.location.replace("/../approve/index.html")
 }
 
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
     e.preventDefault()
-    window.location.href = "/../approve/approve.html";
+    window.location.href = "/../approve/index.html";
 })  
 
 document.querySelector("form").addEventListener('submit', function (e) {
@@ -75,7 +75,7 @@ submit.addEventListener("click", function () {
         user.birthDate = birthDate
         localStorage.setItem("wizardUser", JSON.stringify(user))
         localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-        window.location.href = "/../phase2/phase2.html";
+        window.location.href = "/../phase2/index.html";
     }
 })
 

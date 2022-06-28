@@ -1,7 +1,7 @@
 const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
 
 if (!pageCounter.phase2){
-    window.location.replace("/../phase2/phase2.html")
+    window.location.replace("/../phase2/index.html")
 }
 
 async function getHobbies() {
@@ -50,14 +50,14 @@ function addPhoto(){
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
     e.preventDefault()
-    window.location.href = "/../phase2/phase2.html";
+    window.location.href = "/../phase2/index.html";
 })  
 
 function next(){
     pageCounter.phase3 = true
     localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
     localStorage.setItem("wizardUser", JSON.stringify(data))
-    window.location.href = "/../summary/summary.html";
+    window.location.href = "/../summary/index.html";
 }
 
 
