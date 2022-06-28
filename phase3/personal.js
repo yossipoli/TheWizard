@@ -1,22 +1,14 @@
 
-/*async function getHobbies() {
-    const response = await fetch("hobbies.json",{
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        mode: 'no-cors', // no-cors, *cors, same-origin
-        })
-        if (response.ok) {
-            const jsonValue = await response.json(); // Get JSON value from the response body
-            return Promise.resolve(jsonValue);
-          } else {
-            return Promise.reject('*** PHP file not found');
-          }
-        }
+async function getHobbies() {
+    const hobbies = await fetch("/../hobbiesList.json").then(res=>res.json())
+    console.log(hobbies)
+    createHobbies(hobbies)
+}
     //const hobbies= await res.json()
     // .then(hobbies=>createHobbies(hobbies))
-    //createHobbies(hobbies)
- */   
-
-const hobbies = ["cooking",
+    //
+   
+/*const hobbies = ["cooking",
 "baking",
 "singning",
 "dancing",
@@ -37,8 +29,8 @@ const hobbies = ["cooking",
 "diveing",
 "horse riding",
 "watch tv",
-"movies"]
-
+"movies"]*/
+getHobbies()
 const data = JSON.parse(localStorage.getItem("wizardUser"));
 let page = JSON.parse(localStorage.getItem("pageCounter"));
 
@@ -56,7 +48,7 @@ function createHobbies(hobbies){
         hobbiesPlace.append(hobbieElement, hobbieLabel)
     }
 }
-createHobbies(hobbies)
+
 
 const photoPlace = document.getElementById("userPhoto")
 photoPlace.addEventListener('input',()=>{

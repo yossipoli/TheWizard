@@ -6,6 +6,6 @@ button.addEventListener("click", function () {
     const user = {}
     localStorage.setItem("wizardUser", JSON.stringify(user))
     localStorage.setItem("pageCounter", 1)
-    window.location.href ="/../phase1/details.html"
+    window.location.href ="../phase1/details.html"
   }
 });
