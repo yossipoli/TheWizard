@@ -73,8 +73,9 @@ async function getCities(){
     }
 }
 
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
-if (!pageCounter.phase1){
-    window.location.replace("/../phase1/index.html")
-}
+// const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+// if (!pageCounter.phase1){
+//     window.location.replace("/../phase1/index.html")
+// }
+loadPage("phase1","/../phase1/index.html")
 getCities()
