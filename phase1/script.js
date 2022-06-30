@@ -3,12 +3,7 @@ const firstNameX = document.getElementById("firstNameAsterisk")
 const emailX = document.getElementById("emailAsterisk")
 const birthDateX = document.getElementById("birthDateAsterisk")
 
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
-const user = JSON.parse(localStorage.getItem("wizardUser"))
-
-if (!pageCounter.approve){
-    window.location.replace("/../approve/index.html")
-}
+loadPage("approve","/../approve/index.html")
 
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
@@ -24,15 +19,18 @@ firstNameX.style.display = "none";
 emailX.style.display = "none";
 birthDateX.style.display = "none";
 
-let firstName = document.getElementById("firstName").value = user.name || ""
-let email = document.getElementById("email").value = user.email || ""
-let birthDate = document.getElementById("birthDate").value = user.birthDate || ""
+let firstName = document.getElementById("firstName")
+let email = document.getElementById("email")
+let birthDate = document.getElementById("birthDate")
+firstName.value = user.name || ""
+email.value = user.email || ""
+birthDate.value = user.birthDate || ""
 
 
 submit.addEventListener("click", function () {
-    firstName = document.getElementById("firstName").value
-    email = document.getElementById("email").value
-    birthDate = document.getElementById("birthDate").value
+    firstName = firstName.value
+    email = email.value
+    birthDate = birthDate.value
     const nameFormat = /\w\w+\s\w\w+/g;
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const today = new Date();

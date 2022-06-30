@@ -1,8 +1,5 @@
-const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
+loadPage("phase2" ,"/../phase2/index.html")
 
-if (!pageCounter.phase2){
-    window.location.replace("/../phase2/index.html")
-}
 
 async function getHobbies() {
     const hobbies = await fetch("/../jsons/hobbies.json").then(res=>res.json())
