@@ -1,11 +1,21 @@
+const inputs = document.querySelectorAll("input")
 
 let pageCounter, user
-function loadPage(phase ,link){
+function loadPage(current, phase ,link){
     pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
     user = JSON.parse(localStorage.getItem("wizardUser"))
 
-    pageValidation(phase ,link)
+    pageValidation(current, phase ,link)
 }
+
+// fillPage()
+// function fillPage(){
+//     for (const input of inputs){
+//         if (input.type === "text"){
+//             input.value = user[input] || ""
+//         }
+//     }
+// }
     
 function pageValidation(current, phase ,link){
     if (!pageCounter[phase]) window.location.replace(link)
