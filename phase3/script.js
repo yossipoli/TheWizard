@@ -40,8 +40,6 @@ function addPhoto(){
     const photoPlace = document.getElementById("userPhoto")
     user.img = photoPlace.value
     photoPart.src = photoPlace.value
-
-
 }
 
 const prev = document.querySelector("#prevBtn")
