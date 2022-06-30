@@ -31,9 +31,9 @@ function pageValidation(current, phase ,link){
     }
 }
 
-// function next(user, pageCounter, link) {
-//     localStorage.setItem("wizardUser", JSON.stringify(user))
-//     localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-//     window.location.href = link
-//   }
+function next(user, pageCounter, link) {
+    localStorage.setItem("wizardUser", JSON.stringify(user))
+    localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+    window.location.href = link
+  }
 
