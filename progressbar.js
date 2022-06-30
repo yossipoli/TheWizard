@@ -5,3 +5,4 @@ for (const page in pageCounter){
         document.querySelector(`#${page}`).classList.add("progress_background")
     }
 }
+
