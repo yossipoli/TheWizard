@@ -1,6 +1,6 @@
 async function getCities(){
     const user = JSON.parse(localStorage.getItem("wizardUser"))
-    const cities = await fetch("/../cities.json").then(res=>res.json())
+    const cities = await fetch("/../jsons/cities.json").then(res=>res.json())
 
     const prev = document.querySelector("#prevBtn")
     prev.addEventListener("click", (e)=>{

@@ -5,7 +5,7 @@ if (!pageCounter.phase2){
 }
 
 async function getHobbies() {
-    const hobbies = await fetch("hobbies.json").then(res=>res.json())
+    const hobbies = await fetch("/../jsons/hobbies.json").then(res=>res.json())
     createHobbies(hobbies)
 }
 getHobbies()
