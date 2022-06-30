@@ -2,7 +2,8 @@ loadPage("summery", "phase3","/../phase3/index.html")
 
 const main = document.querySelector("main");
 const allP = document.querySelectorAll("p");
-const button = document.querySelector("button");
+const newUser = document.querySelector("#newUser");
+const prev = document.querySelector("#prevBtn");
 
 // const user = JSON.parse(localStorage.getItem("wizardUser"));
 
@@ -21,8 +22,13 @@ function updateData() {
   }
 }
 
+prev.addEventListener("click", (e)=>{
+    e.preventDefault()
+    window.location.href = "/../phase3/index.html";
+})  
+
 updateData();
-button.addEventListener("click", function () {
+newUser.addEventListener("click", function () {
   localStorage.clear();
   window.location.replace("/../approve/index.html");
 });
