@@ -119,3 +119,14 @@ button, #submit {
 .current_page{
   color: red;
 }
+
+#agreeValidationDiv{
+  display: flex;
+  justify-content: center;
+}
+
+#premium {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Approve Page</title>
-    <link rel="stylesheet" href="../style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>The Wizard</h1>
-    </header>
-    <main>
-      <p id="message">
-        Hello and welcome to the Wizard Registration! do you agree to start your
-        journey as a wizard? if so, let's continue!
-      </p>
-      <div id="agree">
-        <input type="checkbox" />
-        <button>Agree!</button>
-      </div>
-    </main>
-    <footer></footer>
-    <script src="../mainScript.js"></script>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approve Page</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>The Wizard</h1>
+  </header>
+  <main>
+    <p id="message">
+      Hello and welcome to the Wizard Registration! do you agree to start your
+      journey as a wizard? if so, let's continue!
+    </p>
+    <div id="agree">
+      <input type="checkbox" />
+      <button>Agree!</button>
+    </div>
+    <div id="agreeValidationDiv">
+      <span class="invalid hidden" id="agreeValidation">Must Agree for continue</span>
+    </div>
+    <div id="premium">
+      <input type="checkbox" />
+      <button>Register as premium user</button>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="../mainScript.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
