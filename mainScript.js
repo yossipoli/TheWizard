@@ -7,11 +7,18 @@ function loadPage(phase ,link){
     pageValidation(phase ,link)
 }
     
-function pageValidation(phase ,link){
+function pageValidation(current, phase ,link){
     if (!pageCounter[phase]) window.location.replace(link)
-    for (const page in pageCounter)
-        if (pageCounter[page])
+    for (const page in pageCounter){
+        if (page === current) document.querySelector(`#${page}`).classList.add("current_page")
+        if (pageCounter[page]){
             document.querySelector(`#${page}`).classList.add("progress_background")
+        }
+        else {
+            document.querySelector(`#${page}`).classList.add("progress_background")
+            break
+        }
+    }
 }
 
 function next(user, pageCounter, link) {

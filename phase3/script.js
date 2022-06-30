@@ -1,4 +1,4 @@
-loadPage("phase2" ,"/../phase2/index.html")
+loadPage("phase3", "phase2" ,"/../phase2/index.html")
 
 
 async function getHobbies() {
@@ -7,38 +7,38 @@ async function getHobbies() {
 }
 getHobbies()
 
-const data = JSON.parse(localStorage.getItem("wizardUser"));
+// const user = JSON.parse(localStorage.getItem("wizardUser"));
 const photoPart = document.getElementById("photo")
-data.img = data.img || ""
-data.hobbies = data.hobbies || []
-photoPart.src = data.img
+user.img = user.img || ""
+user.hobbies = user.hobbies || []
+photoPart.src = user.img
 
 function createHobbies(hobbies){
     const hobbiesPlace = document.getElementById("hobbies")
-    for(const hobbie of hobbies){
-        const hobbieElement = document.createElement("input")
-        const hobbieLabel = document.createElement("label")
-        hobbieElement.type = "checkbox"
-        hobbieElement.onclick = ()=> addHobbies(hobbie)
-        hobbieElement.value = hobbie
-        hobbieLabel.textContent = hobbie
-        for(const userHobby of data.hobbies){
-            if(userHobby == hobbie){
-                hobbieElement.checked = true
+    for(const hobby of hobbies){
+        const hobbyElement = document.createElement("input")
+        const hobbyLabel = document.createElement("label")
+        hobbyElement.type = "checkbox"
+        hobbyElement.onclick = ()=> addHobbies(hobby)
+        hobbyElement.value = hobby
+        hobbyLabel.textContent = hobby
+        for(const userHobby of user.hobbies){
+            if(userHobby == hobby){
+                hobbyElement.checked = true
             }
         }
-        hobbiesPlace.append(hobbieElement, hobbieLabel)
+        hobbiesPlace.append(hobbyElement, hobbyLabel)
     }
 }
-function addHobbies(hobbie){
-    data["hobbies"].push(hobbie)
+function addHobbies(hobby){
+    user["hobbies"].push(hobby)
 }
 
 
 
 function addPhoto(){
     const photoPlace = document.getElementById("userPhoto")
-    data.img = photoPlace.value
+    user.img = photoPlace.value
     photoPart.src = photoPlace.value
 
 
@@ -53,7 +53,7 @@ prev.addEventListener("click", (e)=>{
 function next(){
     pageCounter.phase3 = true
     localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-    localStorage.setItem("wizardUser", JSON.stringify(data))
+    localStorage.setItem("wizardUser", JSON.stringify(user))
     window.location.href = "/../summary/index.html";
 }
 
