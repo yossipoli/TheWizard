@@ -69,9 +69,10 @@ submit.addEventListener("click", function () {
         user.name = name
         user.email = email
         user.birthDate = birthDate
-        localStorage.setItem("wizardUser", JSON.stringify(user))
-        localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-        window.location.href = "/../phase2/index.html";
+        next(user, pageCounter, "/../phase2/index.html")
+        // localStorage.setItem("wizardUser", JSON.stringify(user))
+        // localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+        // window.location.href = "/../phase2/index.html";
     }
 })
 

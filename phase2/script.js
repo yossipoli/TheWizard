@@ -39,9 +39,10 @@ async function getCities(){
             user.street = street
             user.number = number
             pageCounter.phase2 = true
-            localStorage.setItem("wizardUser", JSON.stringify(user))
-            localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-            window.location.href = "/../phase3/index.html";
+            next(user, pageCounter, "/../phase3/index.html")
+            // localStorage.setItem("wizardUser", JSON.stringify(user))
+            // localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+            // window.location.href = "/../phase3/index.html";
         }
     })
 

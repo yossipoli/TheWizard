@@ -48,11 +48,12 @@ prev.addEventListener("click", (e)=>{
     window.location.href = "/../phase2/index.html";
 })  
 
-function next(){
+function submit(){
     pageCounter.phase3 = true
-    localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
-    localStorage.setItem("wizardUser", JSON.stringify(user))
-    window.location.href = "/../summary/index.html";
+    next(user, pageCounter, "/../summary/index.html")
+    // localStorage.setItem("pageCounter", JSON.stringify(pageCounter))
+    // localStorage.setItem("wizardUser", JSON.stringify(user))
+    // window.location.href = "/../summary/index.html";
 }
 
 
