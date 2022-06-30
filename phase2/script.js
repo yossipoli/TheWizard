@@ -1,3 +1,6 @@
+loadPage("phase2", "phase1","/../phase1/index.html")
+getCities()
+
 async function getCities(){
     const user = JSON.parse(localStorage.getItem("wizardUser"))
     const cities = await fetch("/../jsons/cities.json").then(res=>res.json())
@@ -72,10 +75,3 @@ async function getCities(){
         return isValid ?  true : false  
     }
 }
-
-// const pageCounter = JSON.parse(localStorage.getItem("pageCounter"))
-// if (!pageCounter.phase1){
-//     window.location.replace("/../phase1/index.html")
-// }
-loadPage("phase1","/../phase1/index.html")
-getCities()

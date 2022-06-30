@@ -115,3 +115,7 @@ button, #submit {
   background-color: rgb(86, 116, 215);
   border-radius: 20px;
 }
+
+.current_page{
+  color: red;
+}

@@ -3,7 +3,7 @@ const firstNameX = document.getElementById("firstNameAsterisk")
 const emailX = document.getElementById("emailAsterisk")
 const birthDateX = document.getElementById("birthDateAsterisk")
 
-loadPage("approve","/../approve/index.html")
+loadPage("phase1", "approve","/../approve/index.html")
 
 const prev = document.querySelector("#prevBtn")
 prev.addEventListener("click", (e)=>{
@@ -19,32 +19,30 @@ firstNameX.style.display = "none";
 emailX.style.display = "none";
 birthDateX.style.display = "none";
 
-let firstName = document.getElementById("firstName")
+let name = document.getElementById("firstName")
 let email = document.getElementById("email")
 let birthDate = document.getElementById("birthDate")
-firstName.value = user.name || ""
+name.value = user.name || ""
 email.value = user.email || ""
 birthDate.value = user.birthDate || ""
 
 
 submit.addEventListener("click", function () {
-    firstName = firstName.value
+    name = name.value
     email = email.value
     birthDate = birthDate.value
     const nameFormat = /\w\w+\s\w\w+/g;
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const today = new Date();
-    //const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
 
     let check = true;
 
-    if (!firstName.match(nameFormat)) {
+    if (!name.match(nameFormat)) {
         firstNameX.style.display = "block";
         check = false;
     }
 
-    else if (firstName.match(nameFormat)){
+    else if (name.match(nameFormat)){
         firstNameX.style.display = "none";
     }
 
@@ -68,7 +66,7 @@ submit.addEventListener("click", function () {
 
     if (check){
         pageCounter.phase1 = true
-        user.name = firstName
+        user.name = name
         user.email = email
         user.birthDate = birthDate
         localStorage.setItem("wizardUser", JSON.stringify(user))

@@ -1,21 +1,21 @@
-loadPage("phase3","/../phase3/index.html")
+loadPage("summery", "phase3","/../phase3/index.html")
 
 const main = document.querySelector("main");
 const allP = document.querySelectorAll("p");
 const button = document.querySelector("button");
 
-const data = JSON.parse(localStorage.getItem("wizardUser"));
+// const user = JSON.parse(localStorage.getItem("wizardUser"));
 
 function updateData() {
   let i = 1;
-  for (const key in data) {
+  for (const key in user) {
     if (key == "img") {
       const img = document.createElement("img");
-      console.log("this is data img",data.img)
-      img.src = data[key];
+      console.log("this is data img",user.img)
+      img.src = user[key];
       allP[i].appendChild(img);
     } else {
-      allP[i].textContent = allP[i].textContent + ` ${data[key]}`;
+      allP[i].textContent = allP[i].textContent + ` ${user[key]}`;
     }
     i++;
   }
