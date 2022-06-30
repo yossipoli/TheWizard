@@ -1,7 +1,9 @@
-loadPage("phase2", "phase1","/../phase1/index.html")
 getCities()
 
 async function getCities(){
+
+    loadPage("phase2", "phase1","/../phase1/index.html")
+
     const user = JSON.parse(localStorage.getItem("wizardUser"))
     const cities = await fetch("/../jsons/cities.json").then(res=>res.json())
 
@@ -11,8 +13,6 @@ async function getCities(){
         window.location.href = "/../phase1/index.html";
     })    
 
-    let street = document.querySelector("#street").value = user.street || ""
-    let number = document.querySelector("#number").value = user.number || 0
     
     const citySection = document.querySelector("#city")
     const submit = document.querySelector("#submit")
@@ -25,6 +25,8 @@ async function getCities(){
     }
     
     let city = document.querySelector("#city").value = user.city || "Where are you living?"
+    let street = document.querySelector("#street").value = user.street || ""
+    let number = document.querySelector("#number").value = user.number || 0
 
     submit.addEventListener("click",(e)=>{
         e.preventDefault()
