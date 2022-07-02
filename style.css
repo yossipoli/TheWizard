@@ -120,6 +120,18 @@ button, #submit {
   color: red;
 }
 
+
+#agreeValidationDiv{
+  display: flex;
+  justify-content: center;
+}
+
+#premium {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .photos{
   display: flex;
   justify-content: center;
